@@ -8,10 +8,12 @@
 cp /etc/rc.local /etc/rc.local.prev
 
 # Add command to set script to start automatically at startup
-grep -iv "exit 0" /etc/rc.local > /etc/rc.local.tmp
-cp -f /etc/rc.local.tmp /etc/rc.local
-rm -f /etc/rc.local.tmp
-echo "python3 $HOME/stats.py &" >> /etc/rc.local
-echo "exit 0" >> /etc/rc.local
+# grep -iv "exit 0" /etc/rc.local > /etc/rc.local.tmp
+# cp -f /etc/rc.local.tmp /etc/rc.local
+# rm -f /etc/rc.local.tmp
+# echo "/usr/bin/python3 /home/pi/stats.py &" >> /etc/rc.local
+# echo "exit 0" >> /etc/rc.local
+sudo cp ./stats.py /etc/init.d/
+ 
 
 
